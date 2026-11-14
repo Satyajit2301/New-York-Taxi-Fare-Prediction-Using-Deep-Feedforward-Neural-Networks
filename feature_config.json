@@ -1,0 +1,190 @@
+{
+  "target": "fare_amount",
+  "features": [
+    "pickup_longitude",
+    "pickup_latitude",
+    "dropoff_longitude",
+    "dropoff_latitude",
+    "passenger_count",
+    "dlat_km",
+    "dlon_km",
+    "dist_km",
+    "manhattan_km",
+    "bearing_sin",
+    "bearing_cos",
+    "dist_per_passenger",
+    "hour",
+    "dayofweek",
+    "month",
+    "year",
+    "years_since_2009",
+    "is_weekend",
+    "is_night",
+    "is_rush_hour",
+    "post_fare_hike",
+    "hour_sin",
+    "hour_cos",
+    "dow_sin",
+    "dow_cos",
+    "pu_dist_jfk",
+    "pu_dist_lga",
+    "pu_dist_ewr",
+    "pu_dist_times_sq",
+    "pu_dist_wall_st",
+    "do_dist_jfk",
+    "do_dist_lga",
+    "do_dist_ewr",
+    "do_dist_times_sq",
+    "do_dist_wall_st",
+    "pickup_airport",
+    "dropoff_airport",
+    "airport_trip"
+  ],
+  "raw_features": [
+    "pickup_longitude",
+    "pickup_latitude",
+    "dropoff_longitude",
+    "dropoff_latitude",
+    "passenger_count",
+    "hour",
+    "dayofweek",
+    "month",
+    "year"
+  ],
+  "landmarks": {
+    "jfk": [
+      40.6413,
+      -73.7781
+    ],
+    "lga": [
+      40.7769,
+      -73.874
+    ],
+    "ewr": [
+      40.6895,
+      -74.1745
+    ],
+    "times_sq": [
+      40.758,
+      -73.9855
+    ],
+    "wall_st": [
+      40.706,
+      -74.0088
+    ]
+  },
+  "airport_radius_km": {
+    "jfk": 3.0,
+    "lga": 2.0,
+    "ewr": 3.0
+  },
+  "fare_hike_date": "2012-09-04",
+  "model_features": [
+    "pickup_longitude",
+    "pickup_latitude",
+    "dropoff_longitude",
+    "dropoff_latitude",
+    "passenger_count",
+    "dlat_km",
+    "dlon_km",
+    "dist_km",
+    "bearing_sin",
+    "bearing_cos",
+    "hour",
+    "dayofweek",
+    "month",
+    "years_since_2009",
+    "is_weekend",
+    "is_night",
+    "is_rush_hour",
+    "post_fare_hike",
+    "hour_sin",
+    "hour_cos",
+    "dow_sin",
+    "dow_cos",
+    "pu_dist_jfk",
+    "pu_dist_lga",
+    "pu_dist_ewr",
+    "pu_dist_times_sq",
+    "do_dist_jfk",
+    "do_dist_lga",
+    "do_dist_ewr",
+    "do_dist_times_sq",
+    "pickup_airport",
+    "dropoff_airport",
+    "airport_trip"
+  ],
+  "dropped_features": [
+    "manhattan_km",
+    "dist_per_passenger",
+    "year",
+    "pu_dist_wall_st",
+    "do_dist_wall_st"
+  ],
+  "mlp_scaler": "StandardScaler",
+  "mlp_loss": "MSE",
+  "huber_delta_std_units": 0.3,
+  "mlp_optimizer": "Adam",
+  "mlp_lr": 0.003,
+  "mlp_best_params": {
+    "n_layers": 4,
+    "width": 256,
+    "shape": "constant",
+    "dropout": 0.0,
+    "lr": 0.004615060130624858,
+    "batch_size": 2048
+  },
+  "mlp_top3_params": [
+    {
+      "n_layers": 4,
+      "width": 256,
+      "shape": "constant",
+      "dropout": 0.0,
+      "lr": 0.004615060130624858,
+      "batch_size": 2048
+    },
+    {
+      "n_layers": 3,
+      "width": 128,
+      "shape": "taper",
+      "dropout": 0.0,
+      "lr": 0.003,
+      "batch_size": 2048
+    },
+    {
+      "n_layers": 4,
+      "width": 32,
+      "shape": "constant",
+      "dropout": 0.0,
+      "lr": 0.004448458336296336,
+      "batch_size": 2048
+    }
+  ],
+  "mlp_tune_epochs": 30,
+  "final_candidate": "C",
+  "final_params": {
+    "n_layers": 3,
+    "width": 128,
+    "shape": "taper",
+    "dropout": 0.0,
+    "lr": 0.0042,
+    "batch_size": 2048
+  },
+  "final_units": [
+    128,
+    64,
+    32
+  ],
+  "final_epochs": 60,
+  "final_seed": 42,
+  "target_mean": 11.231277465820312,
+  "target_std": 9.244588851928711,
+  "test_metrics": {
+    "Rows": 290613.0,
+    "MAE": 1.3962,
+    "MSE": 6.8903,
+    "RMSE": 2.6249,
+    "R2": 0.9192,
+    "Bias (pred - actual)": 0.0051
+  }
+}
